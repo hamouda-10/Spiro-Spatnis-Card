@@ -7,8 +7,10 @@
   <link rel="icon" type="image/png" href="000.png">
   <style>
     @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Marhey:wght@400;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Marhey:wght@400;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -26,49 +28,49 @@
     }
 
     .container {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 800px; 
-        height: 600px; 
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 800px;
+      height: 600px;
     }
 
     .developer-text {
-        position: absolute;
-        width: 940px; 
-        height: 860px; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-        transition-delay: 0.5s;
+      position: absolute;
+      width: 940px;
+      height: 860px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      transition-delay: 0.5s;
     }
-    
+
     .container:hover .developer-text {
-        opacity: 1;
-        transition-delay: 0.75s;
+      opacity: 1;
+      transition-delay: 0.75s;
     }
 
     .developer-text svg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        fill: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      fill: none;
     }
-    
- .developer-text svg text {
-    font-size: 1.8em;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 5.49px; 
-    fill: #00ff55; 
-    filter: drop-shadow(0 0 5px #00ff55); 
-}
+
+    .developer-text svg text {
+      font-size: 1.8em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 5.49px;
+      fill: #00ff55;
+      filter: drop-shadow(0 0 5px #00ff55);
+    }
 
     #scrolling-text {
-        animation: animate-scroll 20s linear infinite;
+      animation: animate-scroll 20s linear infinite;
     }
 
     @keyframes animate-rgb {
@@ -111,10 +113,11 @@
       align-items: center;
       transition: 0.5s;
       transition-delay: 0.5s;
+    
     }
 
     .container:hover .card {
-      width: 700px; 
+      width: 700px;
       transition-delay: 0.5s;
     }
 
@@ -133,8 +136,8 @@
     .card .circle::before {
       content: "";
       position: absolute;
-      width: 450px; 
-      height: 450px; 
+      width: 450px;
+      height: 450px;
       border-radius: 50%;
       background: #191919;
       border: 8px solid var(--clr);
@@ -153,7 +156,7 @@
 
     .card .circle .logo {
       position: relative;
-      width: 500px; 
+      width: 500px;
       transition: 0.5s;
       transition-delay: 0.5s;
       margin-left: 10PX;
@@ -170,84 +173,446 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(0) rotate(315deg);
-      height: 400px; 
+      height: 400px;
       transition: 0.5s ease-in-out;
     }
 
     .container:hover .card .product_img {
       transition-delay: 0.5s;
       top: 40%;
-      left:80%;
-      height: 700px; 
+      left: 80%;
+      height: 700px;
       transform: translate(-50%, -50%) scale(1) rotate(15deg);
     }
 
-.card .content {
+    .card .content {
+      position: absolute;
+      width: 60%;
+      left: 20%;
+      padding: 20px;
+      opacity: 0;
+      transition: 0.5s;
+      visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .container:hover .card .content {
+      transition-delay: 0.75s;
+      opacity: 1;
+      visibility: visible;
+      left: -5%;
+    }
+
+    .card .content h1 {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 2.7em;
+      font-family: 'Marhey', cursive;
+      margin-right: 0;
+    }
+
+    .card .content p {
+      color: #fff;
+      font-size: 1.3em;
+      font-family: 'Dancing Script', cursive;
+      line-height: 1.5;
+      text-align: center;
+      word-wrap: break-word;
+      padding: 5px;
+      max-width: 93%;
+      margin-top: -5px;
+      margin-bottom: 90px;
+    }
+    
+    /* --- START OF BUTTON CSS --- */
+    :root {
+      --primary: #151f28;
+      --primary-light: #151f28;
+      --dark: #04672d;
+      --grey-dark: #3F4656;
+      --grey: #6C7486;
+      --grey-light: #ffffff;
+      --white: #FFF;
+      --green: #2de200e1;
+      --sand: #fbbf24;
+      --sand-light: #fbbf24;
+    }
+
+   .order {
   position: absolute;
-  width: 60%;
-  left: 20%;
-  padding: 20px;
-  opacity: 0;
-  transition: 0.5s;
-  visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center; 
-  height: 100%;
-  text-align: center;
-    margin-bottom: 50px;
+  bottom: -40px; /* يخلي الزر في آخر الكونتينر تحت */
+  left: 20%; /* يخلي الزر في النص أفقياً */
+  transform: translateX(-50%); /* علشان يظبط في النص */
+  width: 250px; /* حجم مناسب للعرض */
+  height: 60px; /* حجم مناسب للارتفاع */
+  background: #1f9100;
+  border: 0;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s ease;
+  transform: scale(1.1); /* Increased size */
 }
 
-.container:hover .card .content {
-  transition-delay: 0.75s;
-  opacity: 1;
-  visibility: visible;
-  left: -5%;
-}
+    .order span {
+      --o: 1;
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      top: 19px;
+      line-height: 24px;
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 500;
+      opacity: var(--o);
+      transition: opacity 0.3s ease;
+      font-family: 'Roboto', sans-serif;
+    }
 
-.card .content h1 {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 2.7em;
-  font-family: 'Marhey', cursive;
-  margin-right: 0;
-  margin-top: -10px;
-}
+    .order span.default {
+      transition-delay: 0.3s;
+    }
 
-.card .content p {
-  color: #fff;
-  font-size: 1.33em;
-  font-family: 'Dancing Script', cursive; 
-  line-height: 1.5;
-  text-align: center;
-  word-wrap: break-word;
-  padding: 10px;
-  max-width: 100%;
-  margin-top: -10px;
-}
-.card .content a {
-  position: relative;
-  color: #fff;
-  background: #009b03;
-  padding: 12px 100px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.3em;
-  align-self: center; 
+    .order span.success {
+      --offset: 16px;
+      --o: 0;
+    }
 
-  margin-top: 30px;
-}
+    .order span.success svg {
+      width: 12px;
+      height: 10px;
+      display: inline-block;
+      vertical-align: top;
+      fill: none;
+      margin: 7px 0 0 4px;
+      stroke: var(--green);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 16px;
+      stroke-dashoffset: var(--offset);
+      transition: stroke-dashoffset 0.3s ease;
+    }
+    
+    .order .lines {
+      opacity: 0;
+      position: absolute;
+      height: 3px;
+      background: var(--white);
+      border-radius: 2px;
+      width: 6px;
+      top: 30px;
+      left: 100%;
+      box-shadow: 15px 0 0 var(--white), 30px 0 0 var(--white), 45px 0 0 var(--white), 60px 0 0 var(--white), 75px 0 0 var(--white), 90px 0 0 var(--white), 105px 0 0 var(--white), 120px 0 0 var(--white), 135px 0 0 var(--white), 150px 0 0 var(--white), 165px 0 0 var(--white), 180px 0 0 var(--white), 195px 0 0 var(--white), 210px 0 0 var(--white), 225px 0 0 var(--white), 240px 0 0 var(--white), 255px 0 0 var(--white), 270px 0 0 var(--white), 285px 0 0 var(--white), 300px 0 0 var(--white), 315px 0 0 var(--white), 330px 0 0 var(--white);
+    }
+
+    .order .back,
+    .order .box {
+      --start: var(--white);
+      --stop: var(--grey-light);
+      border-radius: 2px;
+      background: linear-gradient(var(--start), var(--stop));
+      position: absolute;
+    }
+
+    .order .truck {
+      width: 60px;
+      height: 41px;
+      left: 100%;
+      z-index: 1;
+      top: 11px;
+      position: absolute;
+      transform: translateX(24px);
+    }
+
+    .order .truck:before,
+    .order .truck:after {
+      --r: -90deg;
+      content: "";
+      height: 2px;
+      width: 20px;
+      right: 58px;
+      position: absolute;
+      display: block;
+      background: var(--white);
+      border-radius: 1px;
+      transform-origin: 100% 50%;
+      transform: rotate(var(--r));
+    }
+
+    .order .truck:before {
+      top: 4px;
+    }
+
+    .order .truck:after {
+      --r: 90deg;
+      bottom: 4px;
+    }
+
+    .order .truck .back {
+      left: 0;
+      top: 0;
+      width: 60px;
+      height: 41px;
+      z-index: 1;
+    }
+
+    .order .truck .front {
+      overflow: hidden;
+      position: absolute;
+      border-radius: 2px 9px 9px 2px;
+      width: 26px;
+      height: 41px;
+      left: 60px;
+    }
+
+    .order .truck .front:before,
+    .order .truck .front:after {
+      content: "";
+      position: absolute;
+      display: block;
+    }
+
+    .order .truck .front:before {
+      height: 13px;
+      width: 2px;
+      left: 0;
+      top: 14px;
+      background: linear-gradient(var(--grey), var(--grey-dark));
+    }
+
+    .order .truck .front:after {
+      border-radius: 2px 9px 9px 2px;
+      background: var(--primary);
+      width: 24px;
+      height: 41px;
+      right: 0;
+    }
+
+    .order .truck .front .window {
+      overflow: hidden;
+      border-radius: 2px 8px 8px 2px;
+      background: var(--primary-light);
+      transform: perspective(4px) rotateY(3deg);
+      width: 22px;
+      height: 41px;
+      position: absolute;
+      left: 2px;
+      top: 0;
+      z-index: 1;
+      transform-origin: 0 50%;
+    }
+
+    .order .truck .front .window:before,
+    .order .truck .front .window:after {
+      content: "";
+      position: absolute;
+      right: 0;
+    }
+
+    .order .truck .front .window:before {
+      top: 0;
+      bottom: 0;
+      width: 14px;
+      background: var(--dark);
+    }
+
+    .order .truck .front .window:after {
+      width: 14px;
+      top: 7px;
+      height: 4px;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.14);
+      transform: skewY(14deg);
+      box-shadow: 0 7px 0 rgba(255, 255, 255, 0.14);
+    }
+
+    .order .truck .light {
+      width: 3px;
+      height: 8px;
+      left: 83px;
+      transform-origin: 100% 50%;
+      position: absolute;
+      border-radius: 2px;
+      transform: scaleX(0.8);
+      background: #f0dc5f;
+    }
+
+    .order .truck .light:before {
+      content: "";
+      height: 4px;
+      width: 7px;
+      opacity: 0;
+      transform: perspective(2px) rotateY(-15deg) scaleX(0.94);
+      position: absolute;
+      transform-origin: 0 50%;
+      left: 3px;
+      top: 50%;
+      margin-top: -2px;
+      background: linear-gradient(90deg, #e6c800, rgb(227, 197, 0), rgb(221, 192, 0));
+    }
+
+    .order .truck .light.top {
+      top: 4px;
+    }
+
+    .order .truck .light.bottom {
+      bottom: 4px;
+    }
+
+    .order .box {
+      width: 30px;
+      height: 30px;
+      right: 100%;
+      top: 18px;
+      background-image: url('https://www2.0zz0.com/2025/08/29/17/440764959.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .order.animate .default {
+      --o: 0;
+      transition-delay: 0s;
+    }
+
+    .order.animate .success {
+      --offset: 0;
+      --o: 1;
+      transition-delay: 7s;
+    }
+
+    .order.animate .success svg {
+      transition-delay: 7.3s;
+    }
+
+    .order.animate .truck {
+      animation: truck 10s ease forwards;
+    }
+
+    .order.animate .truck:before {
+      animation: door1 2.4s ease forwards 0.3s;
+    }
+
+    .order.animate .truck:after {
+      animation: door2 2.4s ease forwards 0.6s;
+    }
+
+    .order.animate .truck .light:before,
+    .order.animate .truck .light:after {
+      animation: light 10s ease forwards;
+    }
+
+    .order.animate .box {
+      animation: box 10s ease forwards;
+    }
+
+    .order.animate .lines {
+      animation: lines 10s ease forwards;
+    }
+
+    @keyframes truck {
+      10%,
+      30% {
+        transform: translateX(-164px);
+      }
+      40% {
+        transform: translateX(-104px);
+      }
+      60% {
+        transform: translateX(-224px);
+      }
+      75%,
+      100% {
+        transform: translateX(24px);
+      }
+    }
+
+    @keyframes lines {
+      0%,
+      30% {
+        opacity: 0;
+        transform: scaleY(0.7) translateX(0);
+      }
+      35%,
+      65% {
+        opacity: 1;
+      }
+      70% {
+        opacity: 0;
+      }
+      100% {
+        transform: scaleY(0.7) translateX(-400px);
+      }
+    }
+
+    @keyframes light {
+      0%,
+      30% {
+        opacity: 0;
+        transform: perspective(2px) rotateY(-15deg) scaleX(0.88);
+      }
+      40%,
+      100% {
+        opacity: 1;
+        transform: perspective(2px) rotateY(-15deg) scaleX(0.94);
+      }
+    }
+
+    @keyframes door1 {
+      30%,
+      50% {
+        transform: rotate(32deg);
+      }
+    }
+
+    @keyframes door2 {
+      30%,
+      50% {
+        transform: rotate(-32deg);
+      }
+    }
+
+    @keyframes box {
+      8%,
+      10% {
+        transform: translateX(40px);
+        opacity: 1;
+      }
+      25% {
+        transform: translateX(112px);
+        opacity: 1;
+      }
+      26% {
+        transform: translateX(112px);
+        opacity: 0;
+      }
+      27%,
+      100% {
+        transform: translateX(0px);
+        opacity: 0;
+      }
+    }
+    /* --- END OF BUTTON CSS --- */
   </style>
 </head>
 <body>
   <div class="container">
     <div class="developer-text">
-        <svg viewBox="0 0 760 560"> <path id="rect-path" d="M 80,30 h 600 A 50,50 0 0 1 730,80 v 400 A 50,50 0 0 1 680,530 h -600 A 50,50 0 0 1 30,480 v -400 A 50,50 0 0 1 80,30 Z" /> <text>
-               <textPath id="scrolling-text" xlink:href="#rect-path" dominant-baseline="middle">
-    DEVELOPEDBYABDELRAHMANHAMOUDA••DEVELOPEDBYABDELRAHMANHAMOUDA••DEVELOPEDBYABDELRAHMANHAMOUDA•
-</textPath>
+        <svg viewBox="0 0 760 560">
+            <path id="rect-path" d="M 80,30 h 600 A 50,50 0 0 1 730,80 v 400 A 50,50 0 0 1 680,530 h -600 A 50,50 0 0 1 30,480 v -400 A 50,50 0 0 1 80,30 Z" />
+            <text>
+                <textPath id="scrolling-text" xlink:href="#rect-path" dominant-baseline="middle">
+                    DEVELOPEDBYABDELRAHMANHAMOUDA••DEVELOPEDBYABDELRAHMANHAMOUDA••DEVELOPEDBYABDELRAHMANHAMOUDA•
+                </textPath>
             </text>
         </svg>
     </div>
@@ -259,16 +624,48 @@
       <img src="image0000.png" alt="Product" class="product_img">
       <div class="content">
         <h1>Spiro Spatnis</h1>
-   <p>
-Spiro Spatnis is a cool, refreshing drink that quenches your thirst and delights your taste buds. 
-With its unique blend of flavors, every sip brings freshness and joy, leaving you energized and satisfied. 
-Crafted with a perfect balance of taste and quality, it’s the ideal choice for any occasion – whether you’re relaxing at home, hanging out with friends, or looking for a burst of refreshment on a hot day. 
-Sip Spiro Spatnis and enjoy the authentic taste that has been loved for generations.
-</p>
-        <a href="#">Shop Now</a>
+        <p>
+          Spiro Spatnis is a cool, refreshing drink that quenches your thirst and delights your taste buds.
+          With its unique blend of flavors, every sip brings freshness and joy, leaving you energized and satisfied.
+          Crafted with a perfect balance of taste and quality, it’s the ideal choice for any occasion – whether you’re relaxing at home, hanging out with friends, or looking for a burst of refreshment on a hot day.
+          Sip Spiro Spatnis and enjoy the authentic taste that has been loved for generations.
+        </p>
+        
+        <button class="order">
+            <span class="default">Order Now</span>
+            <span class="success">Order Placed
+                <svg viewbox="0 0 12 10">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg>
+            </span>
+            <div class="box"></div>
+            <div class="truck">
+                <div class="back"></div>
+                <div class="front">
+                    <div class="window"></div>
+                </div>
+                <div class="light top"></div>
+                <div class="light bottom"></div>
+            </div>
+            <div class="lines"></div>
+        </button>
+
       </div>
     </div>
   </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script>
+    $('.order').click(function (e) {
+      let button = $(this);
+      if (!button.hasClass('animate')) {
+        button.addClass('animate');
+        setTimeout(() => {
+          button.removeClass('animate');
+        }, 10000); // Animation duration is 10 seconds
+      }
+    });
+  </script>
 
 </body>
 </html>

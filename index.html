@@ -230,7 +230,6 @@
       margin-bottom: 90px;
     }
     
-    /* --- START OF BUTTON CSS --- */
     :root {
       --primary: #151f28;
       --primary-light: #151f28;
@@ -246,11 +245,11 @@
 
    .order {
   position: absolute;
-  bottom: -40px; /* يخلي الزر في آخر الكونتينر تحت */
-  left: 20%; /* يخلي الزر في النص أفقياً */
-  transform: translateX(-50%); /* علشان يظبط في النص */
-  width: 250px; /* حجم مناسب للعرض */
-  height: 60px; /* حجم مناسب للارتفاع */
+  bottom: -40px; 
+  left: 20%; 
+  transform: translateX(-50%);
+  width: 250px; 
+  height: 60px; 
   background: #1f9100;
   border: 0;
   border-radius: 20px;
@@ -258,7 +257,7 @@
   cursor: pointer;
   overflow: hidden;
   transition: background 0.3s ease;
-  transform: scale(1.1); /* Increased size */
+  transform: scale(1.1); 
 }
 
     .order span {
@@ -601,7 +600,86 @@
         opacity: 0;
       }
     }
-    /* --- END OF BUTTON CSS --- */
+ 
+@media (max-width: 768px) {
+  .container {
+    width:90%;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .container:hover .card {
+    width: 100%;
+    height: 550px;
+  }
+
+  .card {
+    width: 350px;
+    height: 350px;
+  }
+
+  .card .circle::before {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .container:hover .card .circle::before {
+    width: 100%;
+    height: 550px;
+  }
+
+  .card .circle .logo {
+    width: 300px;
+  }
+
+  .container:hover .card .product_img {
+    top: 40%;
+    left: 50%;
+    height: 700px;
+    transform: translate(-50%, -50%) scale(1) rotate(15deg);
+  }
+
+  .card .content {
+    width: 90%;
+    left: 5%;
+    padding: 10px;
+    margin-bottom: 0;
+  }
+
+  .container:hover .card .content {
+    left: 5%;
+    top: 10px;
+  }
+
+  .card .content h1 {
+    font-size: 2em;
+  }
+
+  .card .content p {
+    font-size: 1.1em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+
+  .order {
+    width: 220px;
+    height: 60px;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .order span {
+    top: 16px;
+    font-size: 16px;
+  }
+
+  .developer-text {
+    display: none;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -662,7 +740,7 @@
         button.addClass('animate');
         setTimeout(() => {
           button.removeClass('animate');
-        }, 10000); // Animation duration is 10 seconds
+        }, 10000); 
       }
     });
   </script>
